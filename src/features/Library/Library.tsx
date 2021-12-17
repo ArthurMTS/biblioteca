@@ -5,10 +5,7 @@ import { FilterBar } from './components/FilterBar';
 
 import { api } from '../../_config/api';
 
-type Book = {
-  title: string;
-  created_at: string;
-}
+import { Book } from './types';
 
 export const Library = () => {
   const [books, setBooks] = useState<Book[]>([]);
