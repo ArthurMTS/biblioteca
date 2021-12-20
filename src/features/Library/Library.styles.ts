@@ -25,5 +25,6 @@ export const useStyles = makeStyles({
     justifyContent: 'center',
     gap: '10px',
     width: '100%',
+    marginBottom: '20px',
   },
 });
