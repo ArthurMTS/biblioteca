@@ -19,12 +19,4 @@ export const useStyles = makeStyles({
   title: {
     marginTop: '20px',
   },
-  bookList: {
-    display: 'flex',
-    flexDirection: 'column',
-    justifyContent: 'center',
-    gap: '10px',
-    width: '100%',
-    marginBottom: '20px',
-  },
 });

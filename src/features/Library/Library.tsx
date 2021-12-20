@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { Box } from '@material-ui/core';
 
 import { SearchBar } from './components/SearchBar';
-import { Card } from './components/Card';
+import { CardList } from './components/CardList';
 
 import { api } from '../../_config/api';
 
@@ -39,18 +39,7 @@ export const Library = () => {
 
       <SearchBar handler={handleRequest} />
 
-      <Box className={styles.bookList}>
-        {
-          books.map(book => 
-            <Card 
-              key={book.created_at}
-              author={book.author}
-              title={book.title}
-              url={book.url}
-            />
-          )
-        }
-      </Box>
+      <CardList elements={books} />
     </Box>
   );
 };
