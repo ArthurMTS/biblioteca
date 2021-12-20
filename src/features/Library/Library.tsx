@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { Box } from '@material-ui/core';
 
 import { FilterBar } from './components/FilterBar';
+import { Card } from './components/Card';
 
 import { api } from '../../_config/api';
 
@@ -30,7 +31,14 @@ export const Library = () => {
 
       <Box>
         {
-          books.map(book => <p key={book.created_at}>{book.title}</p>)
+          books.map(book => 
+            <Card 
+              key={book.created_at}
+              author={book.author}
+              title={book.title}
+              url={book.url}
+            />
+          )
         }
       </Box>
     </Box>
