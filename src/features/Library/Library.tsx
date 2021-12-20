@@ -15,15 +15,21 @@ export const Library = () => {
 
   const styles = useStyles();
 
+  const handleRequest = async (searchTerm: string = '') => {
+    const result = await api.get('search', {
+      params: {
+        query: searchTerm
+      }
+    });
+
+    const { hits } = result.data;
+
+    const filteredHits = hits?.filter(({ title, author, url }: Book) => title && author && url);
+
+    setBooks(filteredHits);
+  }
+
   useEffect(() => {
-    const handleRequest = async () => {
-      const result = await api.get('search');
-
-      const { hits } = result.data;
-
-      setBooks(hits);
-    }
-
     handleRequest();
   }, []);
 
@@ -31,7 +37,7 @@ export const Library = () => {
     <Box className={styles.library}>
       <h1 className={styles.title}>{process.env.REACT_APP_APP_NAME}</h1>
 
-      <SearchBar />
+      <SearchBar handler={handleRequest} />
 
       <Box className={styles.bookList}>
         {
