@@ -4,11 +4,7 @@ import { FiLink } from 'react-icons/fi';
 
 import { useStyles } from './Card.styles';
 
-type CardProps = {
-  author: string;
-  title: string;
-  url: string;
-};
+import { CardProps } from './types';
 
 export const Card = ({ author, title, url }: CardProps) => {
   const styles = useStyles();
