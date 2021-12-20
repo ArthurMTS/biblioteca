@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Box } from '@material-ui/core';
 
-import { FilterBar } from './components/FilterBar';
+import { SearchBar } from './components/SearchBar';
 import { Card } from './components/Card';
 
 import { api } from '../../_config/api';
@@ -31,7 +31,7 @@ export const Library = () => {
     <Box className={styles.library}>
       <h1 className={styles.title}>{process.env.REACT_APP_APP_NAME}</h1>
 
-      <FilterBar />
+      <SearchBar />
 
       <Box className={styles.bookList}>
         {

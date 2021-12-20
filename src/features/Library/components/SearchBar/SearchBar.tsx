@@ -1,13 +1,13 @@
 import { Box, TextField, Button } from '@material-ui/core';
 import { FiSearch } from 'react-icons/fi'
 
-import { useStyles } from './FilterBar.styles';
+import { useStyles } from './SearchBar.styles';
 
-export const FilterBar = () => {
+export const SearchBar = () => {
   const styles = useStyles();
 
   return (
-    <Box className={styles.filterBar}>
+    <Box className={styles.searchBar}>
       <TextField
         className={styles.input}
         variant='outlined'
