@@ -12,13 +12,16 @@ export const Card = ({ author, title, url }: CardProps) => {
   return (
     <Box className={styles.card}>
       <Typography className={styles.line}>
-        <FaUser className={styles.icon} /> {author}
+        <FaUser className={styles.icon} />
+        <span className={styles.text}>{author}</span>
       </Typography>
       <Typography className={styles.line}>
-        <FaBook className={styles.icon} /> {title}
+        <FaBook className={styles.icon} />
+        <span className={styles.text}>{title}</span>
       </Typography>
       <Typography className={styles.line}>
-        <FiLink className={styles.icon} /> {url}
+        <FiLink className={styles.icon} />
+        <span className={styles.text}>{url}</span>
       </Typography>
     </Box>
   );

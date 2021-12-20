@@ -6,9 +6,10 @@ export const useStyles = makeStyles({
     justifyContent: 'center',
     alignItems: 'center',
     gap: '35px',
+    width: '100%',
   },
   input: {
-    width: '50ch',
+    width: '100%',
   },
   button: {
     fontSize: '5ch',

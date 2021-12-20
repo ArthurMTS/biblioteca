@@ -6,10 +6,14 @@ import { Card } from './components/Card';
 
 import { api } from '../../_config/api';
 
+import { useStyles } from './Library.styles';
+
 import { Book } from './types';
 
 export const Library = () => {
   const [books, setBooks] = useState<Book[]>([]);
+
+  const styles = useStyles();
 
   useEffect(() => {
     const handleRequest = async () => {
@@ -24,12 +28,12 @@ export const Library = () => {
   }, []);
 
   return (
-    <Box>
-      <h1>{process.env.REACT_APP_APP_NAME}</h1>
+    <Box className={styles.library}>
+      <h1 className={styles.title}>{process.env.REACT_APP_APP_NAME}</h1>
 
       <FilterBar />
 
-      <Box>
+      <Box className={styles.bookList}>
         {
           books.map(book => 
             <Card 
